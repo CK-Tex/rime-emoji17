@@ -4,13 +4,16 @@
 patch:
   style/+:
     font_face: &emoji_font_chain >-
-      Noto Color Emoji:23:23, # https://fonts.google.com/noto/specimen/Noto+Color+Emoji
-      Noto Color Emoji:2a:2a,
-      Noto Color Emoji:30:39,
-      Noto Color Emoji:a9:a9,
+      Segoe UI Emoji:23:23,
+      Segoe UI Emoji:2a:2a,
+      Segoe UI Emoji:30:39,
+      Segoe UI Emoji:20e3:20e3,
+
+      Segoe UI Emoji:1f100:1f1e5,
+
+      Noto Color Emoji:a9:a9,       # https://fonts.google.com/noto/specimen/Noto+Color+Emoji
       Noto Color Emoji:ae:ae,
       Noto Color Emoji:200d:200d,
-      Noto Color Emoji:20e3:20e3,
       Noto Color Emoji:203c:203c,
       Noto Color Emoji:2049:2049,
       Noto Color Emoji:2122:2122,
@@ -33,16 +36,14 @@ patch:
       Noto Color Emoji:303d:303d,
       Noto Color Emoji:3297:3299,
       Noto Color Emoji:fe0f:fe0f,
-      Noto Color Emoji:1f000:1faff,
+      Noto Color Emoji:1f000:1f0ff,
+      Noto Color Emoji:1f1e6:1f1ff,
+      Noto Color Emoji:1f200:1faff,
       Noto Color Emoji:e0020:e007f,
 
-      Segoe UI Emoji:23:23,
-      Segoe UI Emoji:2a:2a,
-      Segoe UI Emoji:30:39,
       Segoe UI Emoji:a9:a9,
       Segoe UI Emoji:ae:ae,
       Segoe UI Emoji:200d:200d,
-      Segoe UI Emoji:20e3:20e3,
       Segoe UI Emoji:203c:203c,
       Segoe UI Emoji:2049:2049,
       Segoe UI Emoji:2122:2122,
@@ -65,18 +66,20 @@ patch:
       Segoe UI Emoji:303d:303d,
       Segoe UI Emoji:3297:3299,
       Segoe UI Emoji:fe0f:fe0f,
-      Segoe UI Emoji:1f000:1faff,
+      Segoe UI Emoji:1f000:1f0ff,
+      Segoe UI Emoji:1f100:1f1e5,
+      Segoe UI Emoji:1f200:1faff,
       Segoe UI Emoji:e0020:e007f,
 
-      思源黑体, # https://github.com/adobe-fonts/source-han-sans/releases
+      思源黑体,      # https://github.com/adobe-fonts/source-han-sans/releases
       Microsoft YaHei UI,
-      遍黑体P1, # https://github.com/weiter0/Plangothic
+      遍黑体P1,      # https://github.com/weiter0/Plangothic
       遍黑体P2,
-      TH-Tshyn-P0, # http://cheonhyeong.com/Simplified/download.html
+      TH-Tshyn-P0,  # http://cheonhyeong.com/Simplified/download.html
       TH-Tshyn-P1,
       TH-Tshyn-P2,
       TH-Tshyn-P16,
-      Jigmo, # https://kamichikoichi.github.io/jigmo/
+      Jigmo,        # https://kamichikoichi.github.io/jigmo/
       Jigmo2,
       Jigmo3,
       Segoe UI Symbol

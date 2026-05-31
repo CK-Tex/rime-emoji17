@@ -1,11 +1,29 @@
 -- Processor companion for emoji_u17.
 -- 1. Pressing 1-9/0/Space/Return on a v+category hint jumps to that category.
--- 2. Normal candidate navigation and numeric selection are left to key_binder/selector.
+-- 2. Clicking a v+category hint with mouse also jumps to that category.
+-- 3. Normal candidate navigation and numeric selection are left to key_binder/selector.
 
 local processor = {}
 
 local kAccepted = 1
 local kNoop = 2
+
+local CATEGORY_TITLE = {
+  biaoqing = "表情", xiaolian = "笑脸", qinggan = "情感",
+  ren = "人物", renwu = "人物", shenti = "身体", zujian = "组件", bujian = "部件",
+  dongwu = "动物", ziran = "自然", zhiwu = "植物", hua = "花",
+  shiwu = "食物", yinliao = "饮料", chi = "吃", shuiguo = "水果",
+  lvxing = "旅行", didian = "地点", jiaotong = "交通", che = "车",
+  huodong = "活动", yundong = "运动", youxi = "游戏",
+  wuti = "物体", dongxi = "东西", yifu = "衣服",
+  fuhao = "符号", jiantou = "箭头", xingzuo = "星座", shuzi = "数字",
+  guoqi = "国旗", qizhi = "旗帜", guojia = "国家旗帜",
+  biaoqingqinggan = "表情情感", smileysemotion = "表情情感",
+  renwushenti = "人物身体", peoplebody = "人物身体",
+  animalsnature = "动物自然", fooddrink = "食物饮料", travelplaces = "旅行地点",
+  activities = "活动", objects = "物品", symbols = "符号", flags = "旗帜国旗",
+  component = "组件",
+}
 
 local CATEGORY_ORDER = {
   "guoqi", "biaoqing", "ren", "dongwu", "zhiwu", "shiwu", "lvxing", "jiaotong",
@@ -34,22 +52,42 @@ local function user_dir()
   return "."
 end
 
+local function category_title(code, title)
+  if CATEGORY_TITLE[code] then return CATEGORY_TITLE[code] end
+  if title and title ~= "" and title ~= code then return title end
+  return code
+end
+
 local function load_categories(env)
   env.cat_alias = {}
   env.cat_codes = {}
+  env.cat_title = {}
+  env.category_text_to_code = {}
+
   local path = user_dir() .. "/emoji_u17_categories.tsv"
   local f = io.open(path, "r")
   if not f then return end
   for line in f:lines() do
     if line ~= "" and not startswith(line, "#") then
-      local code, targets = string.match(line, "^([^\t]+)\t([^\t]+)")
+      local code, targets, title = string.match(line, "^([^\t]+)\t([^\t]+)\t?(.*)$")
       if code and targets then
+        local display_title = category_title(code, title)
         env.cat_alias[code] = split(targets, ",")
+        env.cat_title[code] = display_title
         table.insert(env.cat_codes, code)
       end
     end
   end
   f:close()
+
+  -- Only the curated category hints are clickable jump targets.
+  -- This mirrors emoji_u17.lua's CATEGORY_ORDER and avoids duplicate raw Unicode subgroup names.
+  for _, code in ipairs(CATEGORY_ORDER) do
+    local title = env.cat_title[code]
+    if title and not env.category_text_to_code[title] then
+      env.category_text_to_code[title] = code
+    end
+  end
 end
 
 local function matching_category_codes(env, prefix)
@@ -95,8 +133,68 @@ local function replace_input(context, text)
   end
 end
 
+local function category_code_from_selected_candidate(ctx, env)
+  local cand = ctx:get_selected_candidate()
+  if not cand or cand.type ~= "emoji_category" then return nil end
+
+  if env.category_text_to_code and env.category_text_to_code[cand.text] then
+    return env.category_text_to_code[cand.text]
+  end
+
+  -- Fallback: use current selected index on the visible category list.
+  local input = string.lower(ctx.input or "")
+  if not startswith(input, "v") then return nil end
+  local matches = matching_category_codes(env, string.sub(input, 2))
+  local ok, code = pcall(function()
+    local comp = ctx.composition
+    if comp:empty() then return nil end
+    local seg = comp:back()
+    return matches[(seg.selected_index or 0) + 1]
+  end)
+  if ok then return code end
+  return nil
+end
+
+local function connect_notifier_first(notifier, fn)
+  -- Newer librime-lua supports notifier groups. group 0 runs before default callbacks.
+  -- That is needed for commit_notifier so the category title is replaced before Engine::OnCommit reads it.
+  local ok, conn = pcall(function() return notifier:connect(fn, 0) end)
+  if ok then return conn end
+  return notifier:connect(fn)
+end
+
 function processor.init(env)
   load_categories(env)
+
+  env.commit_conn = connect_notifier_first(env.engine.context.commit_notifier, function(ctx)
+    local input = string.lower(ctx.input or "")
+    if input == "" or not startswith(input, "v") then return end
+
+    local code_prefix = string.sub(input, 2)
+    if env.cat_alias and env.cat_alias[code_prefix] then return end
+
+    local code = category_code_from_selected_candidate(ctx, env)
+    if not code then return end
+
+    local cand = ctx:get_selected_candidate()
+    if cand and cand.type == "emoji_category" then
+      -- Mouse click commits the candidate's text. Make that commit empty, then restore input below.
+      cand.text = ""
+      env.pending_category_input = "v" .. code
+    end
+  end)
+
+  env.update_conn = env.engine.context.update_notifier:connect(function(ctx)
+    local target = env.pending_category_input
+    if not target or target == "" then return end
+    env.pending_category_input = nil
+    replace_input(ctx, target)
+  end)
+end
+
+function processor.fini(env)
+  if env.commit_conn then env.commit_conn:disconnect() end
+  if env.update_conn then env.update_conn:disconnect() end
 end
 
 function processor.func(key, env)
