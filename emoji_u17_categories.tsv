@@ -1,0 +1,151 @@
+# code	targets	title
+biaoqing	group:Smileys & Emotion	biaoqing
+bujian	group:Component	bujian
+che	subgroup:transport-ground	che
+chi	group:Food & Drink	chi
+didian	group:Travel & Places	didian
+dongwu	group:Animals & Nature	dongwu
+dongxi	group:Objects	dongxi
+fuhao	group:Symbols	fuhao
+guojia	subgroup:country-flag	guojia
+guoqi	group:Flags	guoqi
+hua	subgroup:plant-flower	hua
+huodong	group:Activities	huodong
+jiantou	subgroup:arrow	jiantou
+jiaotong	subgroup:transport-ground,subgroup:transport-water,subgroup:transport-air,subgroup:transport-sign	jiaotong
+lvxing	group:Travel & Places	lvxing
+qinggan	group:Smileys & Emotion	qinggan
+qizhi	group:Flags	qizhi
+ren	group:People & Body	ren
+renwu	group:People & Body	renwu
+shenti	group:People & Body	shenti
+shiwu	group:Food & Drink	shiwu
+shuiguo	subgroup:food-fruit	shuiguo
+shuzi	subgroup:keycap,subgroup:alphanum	shuzi
+wuti	group:Objects	wuti
+xiaolian	group:Smileys & Emotion	xiaolian
+xingzuo	subgroup:zodiac	xingzuo
+yifu	subgroup:clothing	yifu
+yinliao	group:Food & Drink	yinliao
+youxi	subgroup:game	youxi
+yundong	subgroup:sport	yundong
+zhiwu	subgroup:plant-flower,subgroup:plant-other	zhiwu
+ziran	group:Animals & Nature	ziran
+zujian	group:Component	zujian
+biaoqingqinggan	group:Smileys & Emotion	表情情感
+smileysemotion	group:Smileys & Emotion	表情情感
+renwushenti	group:People & Body	人物身体
+peoplebody	group:People & Body	人物身体
+component	group:Component	组件
+animalsnature	group:Animals & Nature	动物自然
+dongwuziran	group:Animals & Nature	动物自然
+shiwuyinliao	group:Food & Drink	食物饮料
+fooddrink	group:Food & Drink	食物饮料
+lvxingdidian	group:Travel & Places	旅行地点
+travelplaces	group:Travel & Places	旅行地点
+activities	group:Activities	活动
+objects	group:Objects	物品
+wupin	group:Objects	物品
+symbols	group:Symbols	符号
+flags	group:Flags	旗帜国旗
+qizhiguoqi	group:Flags	旗帜国旗
+facesmiling	subgroup:face-smiling	face-smiling
+faceaffection	subgroup:face-affection	face-affection
+facetongue	subgroup:face-tongue	face-tongue
+facehand	subgroup:face-hand	face-hand
+faceneutralskeptical	subgroup:face-neutral-skeptical	face-neutral-skeptical
+facesleepy	subgroup:face-sleepy	face-sleepy
+faceunwell	subgroup:face-unwell	face-unwell
+facehat	subgroup:face-hat	face-hat
+faceglasses	subgroup:face-glasses	face-glasses
+faceconcerned	subgroup:face-concerned	face-concerned
+facenegative	subgroup:face-negative	face-negative
+facecostume	subgroup:face-costume	face-costume
+catface	subgroup:cat-face	cat-face
+monkeyface	subgroup:monkey-face	monkey-face
+heart	subgroup:heart	heart
+emotion	subgroup:emotion	emotion
+handfingersopen	subgroup:hand-fingers-open	hand-fingers-open
+handfingerspartial	subgroup:hand-fingers-partial	hand-fingers-partial
+handsinglefinger	subgroup:hand-single-finger	hand-single-finger
+handfingersclosed	subgroup:hand-fingers-closed	hand-fingers-closed
+hands	subgroup:hands	hands
+handprop	subgroup:hand-prop	hand-prop
+bodyparts	subgroup:body-parts	body-parts
+person	subgroup:person	person
+persongesture	subgroup:person-gesture	person-gesture
+personrole	subgroup:person-role	person-role
+personfantasy	subgroup:person-fantasy	person-fantasy
+personactivity	subgroup:person-activity	person-activity
+personsport	subgroup:person-sport	person-sport
+personresting	subgroup:person-resting	person-resting
+family	subgroup:family	family
+personsymbol	subgroup:person-symbol	person-symbol
+skintone	subgroup:skin-tone	skin-tone
+hairstyle	subgroup:hair-style	hair-style
+animalmammal	subgroup:animal-mammal	animal-mammal
+animalbird	subgroup:animal-bird	animal-bird
+animalamphibian	subgroup:animal-amphibian	animal-amphibian
+animalreptile	subgroup:animal-reptile	animal-reptile
+animalmarine	subgroup:animal-marine	animal-marine
+animalbug	subgroup:animal-bug	animal-bug
+plantflower	subgroup:plant-flower	plant-flower
+plantother	subgroup:plant-other	plant-other
+foodfruit	subgroup:food-fruit	food-fruit
+foodvegetable	subgroup:food-vegetable	food-vegetable
+foodprepared	subgroup:food-prepared	food-prepared
+foodasian	subgroup:food-asian	food-asian
+foodsweet	subgroup:food-sweet	food-sweet
+drink	subgroup:drink	drink
+dishware	subgroup:dishware	dishware
+placemap	subgroup:place-map	place-map
+placegeographic	subgroup:place-geographic	place-geographic
+placebuilding	subgroup:place-building	place-building
+placereligious	subgroup:place-religious	place-religious
+placeother	subgroup:place-other	place-other
+transportground	subgroup:transport-ground	transport-ground
+transportwater	subgroup:transport-water	transport-water
+transportair	subgroup:transport-air	transport-air
+hotel	subgroup:hotel	hotel
+time	subgroup:time	time
+skyweather	subgroup:sky & weather	sky & weather
+event	subgroup:event	event
+awardmedal	subgroup:award-medal	award-medal
+sport	subgroup:sport	sport
+game	subgroup:game	game
+artscrafts	subgroup:arts & crafts	arts & crafts
+clothing	subgroup:clothing	clothing
+sound	subgroup:sound	sound
+music	subgroup:music	music
+musicalinstrument	subgroup:musical-instrument	musical-instrument
+phone	subgroup:phone	phone
+computer	subgroup:computer	computer
+lightvideo	subgroup:light & video	light & video
+bookpaper	subgroup:book-paper	book-paper
+money	subgroup:money	money
+mail	subgroup:mail	mail
+writing	subgroup:writing	writing
+office	subgroup:office	office
+lock	subgroup:lock	lock
+tool	subgroup:tool	tool
+science	subgroup:science	science
+medical	subgroup:medical	medical
+household	subgroup:household	household
+otherobject	subgroup:other-object	other-object
+transportsign	subgroup:transport-sign	transport-sign
+warning	subgroup:warning	warning
+arrow	subgroup:arrow	arrow
+religion	subgroup:religion	religion
+zodiac	subgroup:zodiac	zodiac
+avsymbol	subgroup:av-symbol	av-symbol
+gender	subgroup:gender	gender
+math	subgroup:math	math
+punctuation	subgroup:punctuation	punctuation
+currency	subgroup:currency	currency
+othersymbol	subgroup:other-symbol	other-symbol
+keycap	subgroup:keycap	keycap
+alphanum	subgroup:alphanum	alphanum
+geometric	subgroup:geometric	geometric
+flag	subgroup:flag	flag
+countryflag	subgroup:country-flag	country-flag
+subdivisionflag	subgroup:subdivision-flag	subdivision-flag
