@@ -2,7 +2,18 @@
 # 该配置理论上可以全 Emoji + 全字库 (截止 Unicode 17.0)
 
 patch:
-  style/+:
+  style/+:  
+    # Noto Color Emoji:
+    # https://fonts.google.com/noto/specimen/Noto+Color+Emoji
+    # 思源黑体:
+    # https://github.com/adobe-fonts/source-han-sans/releases
+    # 遍黑体：
+    # https://github.com/weiter0/Plangothic
+    # TH-Tshyn：
+    # http://cheonhyeong.com/Simplified/download.html
+    # Jigmo：
+    # https://kamichikoichi.github.io/jigmo/
+    
     font_face: &emoji_font_chain >-
       Segoe UI Emoji:23:23,
       Segoe UI Emoji:2a:2a,
@@ -11,7 +22,7 @@ patch:
 
       Segoe UI Emoji:1f100:1f1e5,
 
-      Noto Color Emoji:a9:a9,       # https://fonts.google.com/noto/specimen/Noto+Color+Emoji
+      Noto Color Emoji:a9:a9,
       Noto Color Emoji:ae:ae,
       Noto Color Emoji:200d:200d,
       Noto Color Emoji:203c:203c,
@@ -71,15 +82,15 @@ patch:
       Segoe UI Emoji:1f200:1faff,
       Segoe UI Emoji:e0020:e007f,
 
-      思源黑体,      # https://github.com/adobe-fonts/source-han-sans/releases
+      思源黑体,
       Microsoft YaHei UI,
-      遍黑体P1,      # https://github.com/weiter0/Plangothic
+      遍黑体P1,
       遍黑体P2,
-      TH-Tshyn-P0,  # http://cheonhyeong.com/Simplified/download.html
+      TH-Tshyn-P0,
       TH-Tshyn-P1,
       TH-Tshyn-P2,
       TH-Tshyn-P16,
-      Jigmo,        # https://kamichikoichi.github.io/jigmo/
+      Jigmo,
       Jigmo2,
       Jigmo3,
       Segoe UI Symbol
