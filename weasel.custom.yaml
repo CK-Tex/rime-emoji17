@@ -1,0 +1,89 @@
+# 附上用于 Windows 10 22H2 的字体配置
+# 该配置理论上可以全 Emoji + 全字库 (截止 Unicode 17.0)
+
+patch:
+  style/+:
+    font_face: &emoji_font_chain >-
+      Noto Color Emoji:23:23, # https://fonts.google.com/noto/specimen/Noto+Color+Emoji
+      Noto Color Emoji:2a:2a,
+      Noto Color Emoji:30:39,
+      Noto Color Emoji:a9:a9,
+      Noto Color Emoji:ae:ae,
+      Noto Color Emoji:200d:200d,
+      Noto Color Emoji:20e3:20e3,
+      Noto Color Emoji:203c:203c,
+      Noto Color Emoji:2049:2049,
+      Noto Color Emoji:2122:2122,
+      Noto Color Emoji:2139:2139,
+      Noto Color Emoji:2194:21aa,
+      Noto Color Emoji:231a:231b,
+      Noto Color Emoji:2328:2328,
+      Noto Color Emoji:23cf:23cf,
+      Noto Color Emoji:23e9:23f3,
+      Noto Color Emoji:23f8:23fa,
+      Noto Color Emoji:24c2:24c2,
+      Noto Color Emoji:25aa:25ab,
+      Noto Color Emoji:25b6:25b6,
+      Noto Color Emoji:25c0:25c0,
+      Noto Color Emoji:25fb:25fe,
+      Noto Color Emoji:2600:27bf,
+      Noto Color Emoji:2934:2935,
+      Noto Color Emoji:2b05:2b55,
+      Noto Color Emoji:3030:3030,
+      Noto Color Emoji:303d:303d,
+      Noto Color Emoji:3297:3299,
+      Noto Color Emoji:fe0f:fe0f,
+      Noto Color Emoji:1f000:1faff,
+      Noto Color Emoji:e0020:e007f,
+
+      Segoe UI Emoji:23:23,
+      Segoe UI Emoji:2a:2a,
+      Segoe UI Emoji:30:39,
+      Segoe UI Emoji:a9:a9,
+      Segoe UI Emoji:ae:ae,
+      Segoe UI Emoji:200d:200d,
+      Segoe UI Emoji:20e3:20e3,
+      Segoe UI Emoji:203c:203c,
+      Segoe UI Emoji:2049:2049,
+      Segoe UI Emoji:2122:2122,
+      Segoe UI Emoji:2139:2139,
+      Segoe UI Emoji:2194:21aa,
+      Segoe UI Emoji:231a:231b,
+      Segoe UI Emoji:2328:2328,
+      Segoe UI Emoji:23cf:23cf,
+      Segoe UI Emoji:23e9:23f3,
+      Segoe UI Emoji:23f8:23fa,
+      Segoe UI Emoji:24c2:24c2,
+      Segoe UI Emoji:25aa:25ab,
+      Segoe UI Emoji:25b6:25b6,
+      Segoe UI Emoji:25c0:25c0,
+      Segoe UI Emoji:25fb:25fe,
+      Segoe UI Emoji:2600:27bf,
+      Segoe UI Emoji:2934:2935,
+      Segoe UI Emoji:2b05:2b55,
+      Segoe UI Emoji:3030:3030,
+      Segoe UI Emoji:303d:303d,
+      Segoe UI Emoji:3297:3299,
+      Segoe UI Emoji:fe0f:fe0f,
+      Segoe UI Emoji:1f000:1faff,
+      Segoe UI Emoji:e0020:e007f,
+
+      思源黑体, # https://github.com/adobe-fonts/source-han-sans/releases
+      Microsoft YaHei UI,
+      遍黑体P1, # https://github.com/weiter0/Plangothic
+      遍黑体P2,
+      TH-Tshyn-P0, # http://cheonhyeong.com/Simplified/download.html
+      TH-Tshyn-P1,
+      TH-Tshyn-P2,
+      TH-Tshyn-P16,
+      Jigmo, # https://kamichikoichi.github.io/jigmo/
+      Jigmo2,
+      Jigmo3,
+      Segoe UI Symbol
+
+    comment_font_face: *emoji_font_chain
+    label_font_face: "Microsoft YaHei UI"
+
+    font_point: 14
+    comment_font_point: 14
+    label_font_point: 14
